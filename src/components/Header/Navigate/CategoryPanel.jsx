@@ -4,6 +4,7 @@ import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaRegSquarePlus } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const CategoryPanel = (props) => {
   const toggleDrawer = (newOpen) => () => {
@@ -34,6 +35,17 @@ const CategoryPanel = (props) => {
                   Apparel
                 </Button>
                 <FaRegSquarePlus className="absolute top-[10px] right-[15px]" />
+                <ul className="submenu absolute top-[100%] left-[0%] w-full pl-3">
+                  <li className="list-none relative">
+                    <Link
+                      to="/"
+                      className="link w-full !text-left !justify-start !px-3 !text-[rgba(0,0,0,0.8)]"
+                    >
+                      Apparel
+                    </Link>
+                    <FaRegSquarePlus className="absolute top-[10px] right-[15px]" />
+                  </li>
+                </ul>
               </li>
             </ul>
           </li>
