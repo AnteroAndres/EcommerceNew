@@ -2,20 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-*{margin: 0px; padding: 0px; box-sizing: border-box;}
-
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     background: #f5f0f0;
     color: rgba(0,0,0,0.9);
-}
-.container{width: 95%; margin: auto;}
-
-.link:hover{color: #ff5252;}
-
-.MuiBadge-badge{background-color: #ff5252 !important;}
-
-nav ul button{text-transform: capitalize !important;}
-
-nav ul button:hover{background: none !important;}
+  }
+  
+  .container {
+    width: 95%;
+    margin: auto;
+  }
+  
+  /* Solo mantén aquí estilos globales que no puedas manejar con componentes */
+  .MuiBadge-badge {
+    background-color: #ff5252;
+  }

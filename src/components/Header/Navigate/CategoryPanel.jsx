@@ -1,53 +1,195 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaRegSquarePlus } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { CustomButton, CategoryButton } from "../../ui/CustomMUI";
+import { FiMinusSquare } from "react-icons/fi";
 
 const CategoryPanel = (props) => {
+  const [submenuIndex, setSubmenuIndex] = useState(null);
+  const [innerSubmenuIndex, setInnerSubmenuIndex] = useState(null);
+
   const toggleDrawer = (newOpen) => () => {
     props.setIsOpenCatPanel(newOpen);
   };
 
+  const openSubMenu = (index) => {
+    if (submenuIndex === index) {
+      setSubmenuIndex(null);
+    } else {
+      setSubmenuIndex(index);
+    }
+  };
+
+  const openInnerSubMenu = (index) => {
+    if (innerSubmenuIndex === index) {
+      setInnerSubmenuIndex(null);
+    } else {
+      setInnerSubmenuIndex(index);
+    }
+  };
+
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" className="categoryPanel">
-      <h3 className="p-3 text-[16px] font-[500] flex items-center justify-between">
+      <h3 className="p-3 text-base font-medium flex items-center justify-between">
         Shop By Categories{" "}
         <IoCloseSharp
           onClick={toggleDrawer(false)}
-          className="cursor-pointer text-[20px]"
+          className="cursor-pointer text-xl"
         />
       </h3>
 
       <div className="scroll">
         <ul className="w-full">
-          <li className="list-none flex items-center relative">
-            <Button className="w-full !text-left !justify-start !px-3 !text-[rgba(0,0,0,0.8)]">
-              Fashion
-            </Button>
-            <FaRegSquarePlus className="absolute top-[10px] right-[15px] cursor-pointer" />
+          <li className="list-none flex items-center relative flex-col">
+            <Link to="/" className="w-full">
+              <CategoryButton>Fashion</CategoryButton>
+            </Link>
 
-            <ul className="submenu absolute top-[100%] left-[0%] w-full pl-3">
-              <li className="list-none relative">
-                <Button className="w-full !text-left !justify-start !px-3 !text-[rgba(0,0,0,0.8)]">
-                  Apparel
-                </Button>
-                <FaRegSquarePlus className="absolute top-[10px] right-[15px]" />
-                <ul className="submenu absolute top-[100%] left-[0%] w-full pl-3">
-                  <li className="list-none relative">
-                    <Link
-                      to="/"
-                      className="link w-full !text-left !justify-start !px-3 !text-[rgba(0,0,0,0.8)]"
-                    >
-                      Apparel
-                    </Link>
-                    <FaRegSquarePlus className="absolute top-[10px] right-[15px]" />
-                  </li>
-                </ul>
-              </li>
-            </ul>
+            {submenuIndex === 0 ? (
+              <FiMinusSquare
+                className="absolute top-[10px] right-[15px] cursor-pointer"
+                onClick={() => openSubMenu(0)}
+              />
+            ) : (
+              <FaRegSquarePlus
+                className="absolute top-[10px] right-[15px] cursor-pointer"
+                onClick={() => openSubMenu(0)}
+              />
+            )}
+            {submenuIndex === 0 && (
+              <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
+                <li className="list-none relative">
+                  <Link to="/" className="w-full">
+                    <CategoryButton>Apparel</CategoryButton>
+                  </Link>
+                  {innerSubmenuIndex === 0 ? (
+                    <FiMinusSquare
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(0)}
+                    />
+                  ) : (
+                    <FaRegSquarePlus
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(0)}
+                    />
+                  )}
+
+                  {innerSubmenuIndex === 0 && (
+                    <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Smart Tablet
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Crepe T-Shirt
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Leather Watch
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Rolling Diamond
+                        </Link>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+              </ul>
+            )}
+          </li>
+          <li className="list-none flex items-center relative flex-col">
+            <Link to="/" className="w-full">
+              <CategoryButton>Outerwear</CategoryButton>
+            </Link>
+
+            {submenuIndex === 1 ? (
+              <FiMinusSquare
+                className="absolute top-[10px] right-[15px] cursor-pointer"
+                onClick={() => openSubMenu(1)}
+              />
+            ) : (
+              <FaRegSquarePlus
+                className="absolute top-[10px] right-[15px] cursor-pointer"
+                onClick={() => openSubMenu(1)}
+              />
+            )}
+            {submenuIndex === 1 && (
+              <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
+                <li className="list-none relative">
+                  <Link to="/" className="w-full">
+                    <CategoryButton>Apparel</CategoryButton>
+                  </Link>
+                  {innerSubmenuIndex === 1 ? (
+                    <FiMinusSquare
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(1)}
+                    />
+                  ) : (
+                    <FaRegSquarePlus
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(1)}
+                    />
+                  )}
+
+                  {innerSubmenuIndex === 1 && (
+                    <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Smart Tablet
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Crepe T-Shirt
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Leather Watch
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Rolling Diamond
+                        </Link>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+              </ul>
+            )}
           </li>
         </ul>
       </div>

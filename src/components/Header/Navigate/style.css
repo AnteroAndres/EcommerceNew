@@ -1,1 +1,7 @@
-.categoryPanel button{text-transform: capitalize !important;}
+.submenu {
+    pointer-events: none;
+  }
+  
+  .group:hover .submenu {
+    pointer-events: auto;
+  }
