@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import { RiMenu2Line } from "react-icons/ri";
 import { LiaAngleDownSolid } from "react-icons/lia";
-import { Link } from "react-router-dom";
 import { GoRocket } from "react-icons/go";
 import CategoryPanel from "./categoryPanel";
+import { Link } from "react-router-dom";
 import { CategoryButton, CustomButton } from "../../ui/CustomMUI";
 import "../Navigate/style.css";
 
 const Navigation = () => {
   const [isOpenCatPanel, setIsOpenCatPanel] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+  const [activeSubSubmenu, setActiveSubSubmenu] = useState(null);
   const menuRef = useRef(null);
 
   const openCategoryPanel = () => {
@@ -63,11 +64,48 @@ const Navigation = () => {
             }`}
           >
             <ul>
-              <li><CategoryButton>Men</CategoryButton></li>
-              <li><CategoryButton>Women</CategoryButton></li>
-              <li><CategoryButton>Kids</CategoryButton></li>
-              <li><CategoryButton>Girls</CategoryButton></li>
-              <li><CategoryButton>Boys</CategoryButton></li>
+              <li className="relative group"
+               onMouseEnter={() => setActiveSubSubmenu("men")}
+               onMouseLeave={() => setActiveSubSubmenu(null)}
+               onClick={() => setActiveSubSubmenu(prev => prev === "men" ? null : "men")}
+              > <div className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">
+              Men
+            </div>
+            {/* Sub-submenu men*/}
+            {activeSubSubmenu === "men" && (
+              <div className="absolute top-0 left-full bg-white shadow-lg rounded w-40">
+                <ul>
+                  <li>
+                    <Link to="/fashion/men/t-shirt" className="block px-4 py-2 hover:bg-gray-100">T-Shirt</Link>
+                  </li>
+                  <li>
+                    <Link to="/fashion/men/jeans" className="block px-4 py-2 hover:bg-gray-100">Jeans</Link>
+                  </li>
+                  <li>
+                    <Link to="/fashion/men/fotwear" className="block px-4 py-2 hover:bg-gray-100">Footwear</Link>
+                  </li>
+                  <li>
+                    <Link to="/fashion/men/watch" className="block px-4 py-2 hover:bg-gray-100">Watch</Link>
+                  </li>
+                  <li>
+                    <Link to="/fashion/men/pents" className="block px-4 py-2 hover:bg-gray-100">Pents</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </li>
+              <li className="list-none w-full"> 
+                <Link  to="/fashion/women" className="block py-2 hover:bg-gray-100 rounded">
+                <CategoryButton>Women</CategoryButton></Link ></li>
+              <li className="list-none w-full"> 
+                <Link  to="/fashion/kids" className="block py-2 hover:bg-gray-100 rounded">
+                <CategoryButton>Kids</CategoryButton></Link ></li>
+              <li className="list-none w-full"> 
+                <Link  to="/fashion/girls" className="block py-2 hover:bg-gray-100 rounded">
+                <CategoryButton>Girls</CategoryButton></Link ></li>
+              <li className="list-none w-full"> 
+                <Link  to="/fashion/boys" className="block py-2 hover:bg-gray-100 rounded">
+                <CategoryButton>Boys</CategoryButton></Link ></li>
             </ul>
           </div>
         )}
