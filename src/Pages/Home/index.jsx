@@ -1,8 +1,13 @@
 import React from 'react'
+import HomeSlider from '../../components/HomeSlider'
+import HomeCatSlider from '../../components/CatSlider'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+    <HomeSlider/>
+    <HomeCatSlider/>
+    </>
   )
 }
 

@@ -51,7 +51,7 @@ const Navigation = () => {
           onClick={() => hasSubmenu && toggleSubmenu(children)}
           className="cursor-pointer"
         >
-          <CustomButton className="font-medium text-sm text-[rgba(0,0,0,0.8)] hover:text-[#ff5252] flex items-center">
+          <CustomButton className="font-bold text-sm text-[rgba(0,0,0,0.8)] hover:text-[#ff5252] flex items-center">
             {children}
             {hasSubmenu && <LiaAngleDownSolid className="ml-1 text-xs" />}
           </CustomButton>
@@ -119,7 +119,7 @@ const Navigation = () => {
         <div className="container flex items-center justify-end gap-8">
           <div className="col_1 w-[20%]">
             <CustomButton
-              className="text-black gap-2 w-full"
+              className="text-black font-bold gap-2 w-full"
               onClick={openCategoryPanel}>
               <RiMenu2Line className="text-lg" />
               Shop By Categories
@@ -130,17 +130,13 @@ const Navigation = () => {
             <ul className="flex items-center gap-5">
               <NavLink to="/">Home</NavLink>
               <NavLink to="/" hasSubmenu>Fashion</NavLink>
-              <NavLink to="/">Bags</NavLink>
-              <NavLink to="/">Footwear</NavLink>
-              <NavLink to="/">Groceries</NavLink>
-              <NavLink to="/">Beauty</NavLink>
-              <NavLink to="/">Wellness</NavLink>
-              <NavLink to="/">Jewellery</NavLink>
+              <NavLink to="/">New Arrivals</NavLink>
+              <NavLink to="/">More</NavLink>
             </ul>
           </div>
 
           <div className="col_3 w-[20%]">
-            <p className="text-sm font-medium flex items-center gap-3 mb-0 mt-0">
+            <p className="text-sm font-bold flex items-center gap-3 mb-0 mt-0">
               <GoRocket className="text-lg" />
               Free International Delivery
             </p>

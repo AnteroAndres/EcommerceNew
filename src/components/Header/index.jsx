@@ -21,11 +21,11 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 const Header = () => {
   return (
-    <header className="bg-white">
-      <div className="top-strip py-2 border-t-[1px] border-gray-250 border-b-[1px]">
-        <div className="container">
+    <header className="bg-white w-full">
+      <div className="top-strip py-2 border-t-[1px] border-gray-250 border-b-[1px] w-full">
+        <div className="container mx-auto px-4 w-full">
           <div className="flex items-center justify-between">
-            <div className="col1 w-[50%]">
+            <div className="col1">
               <p className="text-[12px] font-[500]">
                 Get up to 50% off new season styles, limited time only
               </p>
@@ -55,8 +55,8 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="header py-4 border-b-[1px] border-gray-250">
-        <div className="container flex items-center justify-between">
+      <div className="header py-4 border-b-[1px] border-gray-250 w-full">
+        <div className="container  mx-auto px-4 flex items-center justify-between">
           <div className="col1 w-[25%]">
             <Link to={"/"}>
               <img src="/public/logo.jpg" className="w-24 h-auto" />

@@ -63,7 +63,7 @@ const CategoryPanel = (props) => {
               <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
                 <li className="list-none relative">
                   <Link to="/" className="w-full">
-                    <CategoryButton>Apparel</CategoryButton>
+                    <CategoryButton>Women</CategoryButton>
                   </Link>
                   {innerSubmenuIndex === 0 ? (
                     <FiMinusSquare
@@ -84,7 +84,7 @@ const CategoryPanel = (props) => {
                           to="/"
                           className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
                         >
-                          Smart Tablet
+                          Kurtas & Suits
                         </Link>
                       </li>
                       <li className="list-none relative mb-1">
@@ -92,7 +92,7 @@ const CategoryPanel = (props) => {
                           to="/"
                           className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
                         >
-                          Crepe T-Shirt
+                          Sarees
                         </Link>
                       </li>
                       <li className="list-none relative mb-1">
@@ -100,7 +100,7 @@ const CategoryPanel = (props) => {
                           to="/"
                           className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
                         >
-                          Leather Watch
+                          Tops
                         </Link>
                       </li>
                       <li className="list-none relative mb-1">
@@ -108,9 +108,39 @@ const CategoryPanel = (props) => {
                           to="/"
                           className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
                         >
-                          Rolling Diamond
+                          Jeans
                         </Link>
                       </li>
+                    </ul>
+                  )}
+                </li>
+                <li className="list-none relative">
+                  <Link to="/" className="w-full">
+                    <CategoryButton>Men</CategoryButton>
+                  </Link>
+                  {innerSubmenuIndex === 0 ? (
+                    <FiMinusSquare
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(0)}
+                    />
+                  ) : (
+                    <FaRegSquarePlus
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(0)}
+                    />
+                  )}
+
+                  {innerSubmenuIndex === 0 && (
+                    <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Hoodies
+                        </Link>
+                      </li>
+                      
                     </ul>
                   )}
                 </li>
@@ -119,7 +149,7 @@ const CategoryPanel = (props) => {
           </li>
           <li className="list-none flex items-center relative flex-col">
             <Link to="/" className="w-full">
-              <CategoryButton>Outerwear</CategoryButton>
+              <CategoryButton>Electronics</CategoryButton>
             </Link>
 
             {submenuIndex === 1 ? (
@@ -137,7 +167,7 @@ const CategoryPanel = (props) => {
               <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
                 <li className="list-none relative">
                   <Link to="/" className="w-full">
-                    <CategoryButton>Apparel</CategoryButton>
+                    <CategoryButton>Mobiles</CategoryButton>
                   </Link>
                   {innerSubmenuIndex === 1 ? (
                     <FiMinusSquare
@@ -158,7 +188,7 @@ const CategoryPanel = (props) => {
                           to="/"
                           className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
                         >
-                          Smart Tablet
+                          Apple
                         </Link>
                       </li>
                       <li className="list-none relative mb-1">
@@ -166,7 +196,7 @@ const CategoryPanel = (props) => {
                           to="/"
                           className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
                         >
-                          Crepe T-Shirt
+                          Samsung
                         </Link>
                       </li>
                       <li className="list-none relative mb-1">
@@ -174,7 +204,7 @@ const CategoryPanel = (props) => {
                           to="/"
                           className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
                         >
-                          Leather Watch
+                          OPPO
                         </Link>
                       </li>
                       <li className="list-none relative mb-1">
@@ -182,9 +212,47 @@ const CategoryPanel = (props) => {
                           to="/"
                           className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
                         >
-                          Rolling Diamond
+                          VIVO
                         </Link>
                       </li>
+                    </ul>
+                  )}
+                </li>
+                <li className="list-none relative">
+                  <Link to="/" className="w-full">
+                    <CategoryButton>SmartWatch</CategoryButton>
+                  </Link>
+                  {innerSubmenuIndex === 1 ? (
+                    <FiMinusSquare
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(1)}
+                    />
+                  ) : (
+                    <FaRegSquarePlus
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(1)}
+                    />
+                  )}
+
+                  {innerSubmenuIndex === 1 && (
+                    <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Economic 
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Kids
+                        </Link>
+                      </li>
+                      
                     </ul>
                   )}
                 </li>
