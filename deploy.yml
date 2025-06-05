@@ -1,15 +1,35 @@
-name: Deploy to server
+name: Deploy
 
 on:
   push:
-    branches:
-      - main
-
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    
+    services:
+      redis:
+        image: redis:alpine
+        ports:
+          - 6379:6379
+
     steps:
+      
+      -name: Install redis cli
+        run: apt-get update && apt-get install -y redis-tools -y
+
+      -name: Test redis
+        run: redis-cli -h localhost -p 6379 ping
+      
       - name: Checkout
         uses: actions/checkout@v3
-        run : echo "holamundo"
+
+      - name: Print variables
+        run: echo "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: setup
+        uses: actions/setup-node@v4
+        with: 
+          node-version: '18'
+
+
