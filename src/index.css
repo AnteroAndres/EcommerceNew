@@ -16,6 +16,11 @@
     overflow-x: hidden;
   }
   
+  ::-webkit-scrollbar{width: 8px!important; height: 8px!important;}
+  ::-webkit-scrollbar-track{background: #ff5252;}
+  ::-webkit-scrollbar-thumb{background: #fff;}
+  ::-webkit-scrollbar-thumb:hover{background: #555!important;}
+
   .container {
     width: 100%;
     margin: auto;
