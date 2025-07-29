@@ -5,7 +5,7 @@ import { GoRocket } from "react-icons/go";
 import CategoryPanel from "./categoryPanel";
 import { Link } from "react-router-dom";
 import { CategoryButton, CustomButton } from "../../ui/CustomMUI";
-import "../Navigate/style.css";
+import "./style.css";
 
 const Navigation = () => {
   const [isOpenCatPanel, setIsOpenCatPanel] = useState(false);

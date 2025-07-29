@@ -7,6 +7,11 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import ProductsSlider from "../../components/ProductsSlider";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import HomeBannerV2 from "../../components/HomeSliderV2";
 
 const Home = () => {
   const [value, setValue] = React.useState(0);
@@ -16,7 +21,14 @@ const Home = () => {
   };
   return (
     <>
-      <HomeSlider />
+      {/* <HomeSlider /> */}
+      <section className="py-6">
+        <div className="container flex items-center">
+          <div className="part1 w-[75%]">
+            <HomeBannerV2 />
+          </div>
+        </div>
+      </section>
       <HomeCatSlider />
 
       <section className="py-16 bg-white">
@@ -49,11 +61,11 @@ const Home = () => {
             </div>
           </div>
 
-          <ProductsSlider items={6}/>
+          <ProductsSlider items={6} />
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-4 pt-0 bg-white">
         <div className="container">
           <div className="freeShipping w-[80%] mx-auto py-4 p-4 border sm:border-2 md:border-2 lg:border-2 border-[#ff5252] flex items-center justify-between rounded-sm mb-7">
             <div className="col1 flex items-center gap-4 ">
@@ -74,8 +86,41 @@ const Home = () => {
         </div>
       </section>
 
-      <br />
-      <br />
+      <section className="py-5 pt-0 bg-white">
+        <div className="container">
+          <h2 className="text-2xl font-bold">Latest Products</h2>
+          <ProductsSlider items={6} />
+          <AdsBannerSlider items={3} />
+        </div>
+      </section>
+
+      <section className="py-5 pt-0 bg-white blogSection">
+        <div className="py-5">
+          <Swiper
+            spaceBetween={8}
+            slidesPerView={2.5}
+            breakpoints={{
+              640: {
+                slidesPerView: 3.5,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 4.5,
+                spaceBetween: 12,
+              },
+              1024: {
+                slidesPerView: 6,
+                spaceBetween: 16,
+              },
+            }}
+            navigation={true}
+            modules={[Navigation]}
+            className="mySwiper"
+          >
+            <SwiperSlide></SwiperSlide>
+          </Swiper>
+        </div>
+      </section>
       <br />
       <br />
     </>

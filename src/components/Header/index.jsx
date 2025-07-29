@@ -9,7 +9,7 @@ import { IoGitCompareOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
 import { RiMenu3Line } from "react-icons/ri";
 import Tooltip from "@mui/material/Tooltip";
-import Navigation from "./Navigate";
+import Navigation from "./Navigation";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
