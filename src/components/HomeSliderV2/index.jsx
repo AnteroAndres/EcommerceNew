@@ -17,23 +17,31 @@ const HomeBannerV2 = () => {
       pagination={{
         clickable: true,
       }}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
       modules={[EffectFade, Navigation, Pagination]}
       className="homeSliderV2"
     >
       <SwiperSlide>
         <div className="item w-full rounded-md overflow-hidden relative">
           <img src="https://i.pinimg.com/1200x/02/cf/cf/02cfcffac595c832c514d58704cd82ce.jpg" />
-          <div className="info absolute top-0 right-0 w-[50%] h-[100%] z-50 p-8 flex items-center flex-col justify-center">
-            
-          <div className="w-full">
-            <Button className="btn-org">SHOP NOW</Button>
-          </div>
+          <div className="info absolute top-0 right-0 w-[50%] h-full z-50 p-8 ">
+            <div className="absolute bottom-8 right-8">
+              <Button className="btn-org">SHOP NOW</Button>
+            </div>
           </div>
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="item w-full rounded-md overflow-hidden">
+        <div className="item w-full rounded-md overflow-hidden relative">
           <img src="https://i.pinimg.com/1200x/1d/26/4c/1d264c988391a6b743cfbd299b381170.jpg" />
+          <div className="info absolute top-0 right-0 w-[50%] h-full z-50 p-8 ">
+            <div className="absolute bottom-8 right-8">
+              <Button className="btn-org">SHOP NOW</Button>
+            </div>
+          </div>
         </div>
       </SwiperSlide>
     </Swiper>

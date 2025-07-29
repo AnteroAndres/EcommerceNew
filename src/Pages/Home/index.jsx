@@ -1,17 +1,16 @@
 import React from "react";
-import HomeSlider from "../../components/HomeSlider";
 import HomeCatSlider from "../../components/HomeCatSlider";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import AdsBannerSlider from "../../components/AdsBannerSlider";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
 import ProductsSlider from "../../components/ProductsSlider";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import HomeBannerV2 from "../../components/HomeSliderV2";
+import BannerBoxV2 from "../../components/BannerBoxV2";
 
 const Home = () => {
   const [value, setValue] = React.useState(0);
@@ -23,9 +22,27 @@ const Home = () => {
     <>
       {/* <HomeSlider /> */}
       <section className="py-6">
-        <div className="container flex items-center">
-          <div className="part1 w-[75%]">
+        <div className="container flex gap-4 ">
+          <div className="w-[74%]">
             <HomeBannerV2 />
+          </div>
+          <div className="w-[26%] flex flex-col gap-4 h-full">
+            <div className="flex-1 h-full">
+              <BannerBoxV2
+                info="left"
+                image={
+                  "https://i.pinimg.com/1200x/13/3f/8a/133f8a9a1eedceb334e41e1e7653dcbc.jpg"
+                }
+              />
+            </div>
+            <div className="flex-1 h-full">
+              <BannerBoxV2
+                info="right"
+                image={
+                  "https://i.pinimg.com/1200x/8b/22/37/8b223704e12c58624005d1c31e4887c7.jpg"
+                }
+              />
+            </div>
           </div>
         </div>
       </section>
