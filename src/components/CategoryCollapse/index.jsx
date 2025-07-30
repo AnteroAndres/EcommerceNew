@@ -1,0 +1,251 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { CategoryButton } from "../ui/CustomMUI";
+import { FaRegSquarePlus } from "react-icons/fa6";
+import { FiMinusSquare } from "react-icons/fi";
+
+const CategoryCollapse = () => {
+  const [submenuIndex, setSubmenuIndex] = useState(null);
+  const [innerSubmenuIndex, setInnerSubmenuIndex] = useState(null);
+
+    const openSubMenu = (index) => {
+    if (submenuIndex === index) {
+      setSubmenuIndex(null);
+    } else {
+      setSubmenuIndex(index);
+    }
+  };
+
+  const openInnerSubMenu = (index) => {
+    if (innerSubmenuIndex === index) {
+      setInnerSubmenuIndex(null);
+    } else {
+      setInnerSubmenuIndex(index);
+    }
+  };
+
+  return (
+    <>
+      <div className="scroll">
+        <ul className="w-full">
+          <li className="list-none flex items-center relative flex-col">
+            <Link to="/" className="w-full">
+              <CategoryButton>Fashion</CategoryButton>
+            </Link>
+
+            {submenuIndex === 0 ? (
+              <FiMinusSquare
+                className="absolute top-[10px] right-[15px] cursor-pointer"
+                onClick={() => openSubMenu(0)}
+              />
+            ) : (
+              <FaRegSquarePlus
+                className="absolute top-[10px] right-[15px] cursor-pointer"
+                onClick={() => openSubMenu(0)}
+              />
+            )}
+            {submenuIndex === 0 && (
+              <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
+                <li className="list-none relative">
+                  <Link to="/" className="w-full">
+                    <CategoryButton>Women</CategoryButton>
+                  </Link>
+                  {innerSubmenuIndex === 0 ? (
+                    <FiMinusSquare
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(0)}
+                    />
+                  ) : (
+                    <FaRegSquarePlus
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(0)}
+                    />
+                  )}
+
+                  {innerSubmenuIndex === 0 && (
+                    <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Kurtas & Suits
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Sarees
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Tops
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Jeans
+                        </Link>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+                <li className="list-none relative">
+                  <Link to="/" className="w-full">
+                    <CategoryButton>Men</CategoryButton>
+                  </Link>
+                  {innerSubmenuIndex === 0 ? (
+                    <FiMinusSquare
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(0)}
+                    />
+                  ) : (
+                    <FaRegSquarePlus
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(0)}
+                    />
+                  )}
+
+                  {innerSubmenuIndex === 0 && (
+                    <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Hoodies
+                        </Link>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+              </ul>
+            )}
+          </li>
+          <li className="list-none flex items-center relative flex-col">
+            <Link to="/" className="w-full">
+              <CategoryButton>Electronics</CategoryButton>
+            </Link>
+
+            {submenuIndex === 1 ? (
+              <FiMinusSquare
+                className="absolute top-[10px] right-[15px] cursor-pointer"
+                onClick={() => openSubMenu(1)}
+              />
+            ) : (
+              <FaRegSquarePlus
+                className="absolute top-[10px] right-[15px] cursor-pointer"
+                onClick={() => openSubMenu(1)}
+              />
+            )}
+            {submenuIndex === 1 && (
+              <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
+                <li className="list-none relative">
+                  <Link to="/" className="w-full">
+                    <CategoryButton>Mobiles</CategoryButton>
+                  </Link>
+                  {innerSubmenuIndex === 1 ? (
+                    <FiMinusSquare
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(1)}
+                    />
+                  ) : (
+                    <FaRegSquarePlus
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(1)}
+                    />
+                  )}
+
+                  {innerSubmenuIndex === 1 && (
+                    <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Apple
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Samsung
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          OPPO
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          VIVO
+                        </Link>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+                <li className="list-none relative">
+                  <Link to="/" className="w-full">
+                    <CategoryButton>SmartWatch</CategoryButton>
+                  </Link>
+                  {innerSubmenuIndex === 1 ? (
+                    <FiMinusSquare
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(1)}
+                    />
+                  ) : (
+                    <FaRegSquarePlus
+                      className="absolute top-[10px] right-[15px]"
+                      onClick={() => openInnerSubMenu(1)}
+                    />
+                  )}
+
+                  {innerSubmenuIndex === 1 && (
+                    <ul className="w-full pl-3 border-l border-gray-200 ml-4 mt-1">
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Economic
+                        </Link>
+                      </li>
+                      <li className="list-none relative mb-1">
+                        <Link
+                          to="/"
+                          className="block w-full px-3 transition text-sm hover:text-[#ff5252]"
+                        >
+                          Kids
+                        </Link>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+              </ul>
+            )}
+          </li>
+        </ul>
+      </div>
+    </>
+  );
+};
+
+export default CategoryCollapse;
