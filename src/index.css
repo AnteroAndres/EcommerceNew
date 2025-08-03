@@ -163,3 +163,11 @@
     outline: none !important;
     box-shadow: 0 0 0 3px rgba(255, 82, 82, 0.2) !important;
   }
+
+  .MuiCheckbox-root {
+    padding: 6px !important;
+  }
+
+  .ReactCollapse--collapse {
+    transition: height 500ms !important;
+  }
