@@ -123,50 +123,47 @@
     transform:scale(1.1);
   }
 
-  .MuiTabs-indicator{background-color: #ff5252 !important;}
-  .MuiTab-textColorPrimary.Mui-selected{color: #ff5252 !important;}
+  /* Estos estilos ahora se manejan en el tema de Material UI */
   .productsSlider .swiper-wrapper{
     padding: 15px;
     margin-left: -15px;
     margin-right: -15px;
   }
-  .swiper-pagination-bullet-active{background: #ff5252 !important;}
+  .swiper-pagination-bullet-active{background: #ff5252;}
 
-  /* Botón personalizado para el banner */
+  /* Clase para botones legacy - usar PrimaryButton en su lugar */
   .btn-org {
-    background-color: #ff5252 !important;
-    color: #fff !important;
-    border: none !important;
-    border-radius: 8px !important;
-    padding: 12px 32px !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 12px rgba(255, 82, 82, 0.3) !important;
-    min-width: 140px !important;
+    background-color: #ff5252;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 82, 82, 0.3);
+    min-width: 140px;
   }
 
   .btn-org:hover {
-    background-color: #e04848 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 6px 20px rgba(255, 82, 82, 0.4) !important;
+    background-color: #e04848;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 82, 82, 0.4);
   }
 
   .btn-org:active {
-    transform: translateY(0) !important;
-    box-shadow: 0 2px 8px rgba(255, 82, 82, 0.3) !important;
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(255, 82, 82, 0.3);
   }
 
   .btn-org:focus {
-    outline: none !important;
-    box-shadow: 0 0 0 3px rgba(255, 82, 82, 0.2) !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 82, 82, 0.2);
   }
 
-  .MuiCheckbox-root {
-    padding: 6px !important;
-  }
+  /* Los estilos de MuiCheckbox ahora se manejan en el tema */
 
   .ReactCollapse--collapse {
     transition: height 500ms !important;

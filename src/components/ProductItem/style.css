@@ -1,2 +1,2 @@
-.productItem .actions button:hover svg{color: #fff !important;}
-.productItem .actions button svg{pointer-events: none !important;}
+/* Los estilos de los botones ahora se manejan en CircularActionButton */
+/* Este archivo puede eliminarse o usarse para estilos específicos del ProductItem */
